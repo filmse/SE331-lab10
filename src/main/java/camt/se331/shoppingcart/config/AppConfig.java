@@ -1,5 +1,5 @@
 package camt.se331.shoppingcart.config;
-  
+
 
 import camt.se331.shoppingcart.common.SerializableResourceBundleMessageSource;
 import org.springframework.context.MessageSource;
@@ -17,11 +17,12 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import java.util.Locale;
 
 @EnableWebMvc
-@Configuration 
+@Configuration
 @ComponentScan(basePackages = {"camt.se331.shoppingcart"})
 @EnableAspectJAutoProxy
 @Import({PersistenceContext.class})
 public class AppConfig extends WebMvcConfigurerAdapter {
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**").addResourceLocations("/views/").setCachePeriod(31556926);
@@ -33,13 +34,13 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
-	@Bean  
-    public UrlBasedViewResolver setupViewResolver() {  
-        UrlBasedViewResolver resolver = new UrlBasedViewResolver();  
-        resolver.setPrefix("/views/");  
-        resolver.setSuffix(".jsp");  
-        resolver.setViewClass(JstlView.class);  
-        return resolver;  
+    @Bean
+    public UrlBasedViewResolver setupViewResolver() {
+        UrlBasedViewResolver resolver = new UrlBasedViewResolver();
+        resolver.setPrefix("/views/");
+        resolver.setSuffix(".jsp");
+        resolver.setViewClass(JstlView.class);
+        return resolver;
     }
 
     // The localization here

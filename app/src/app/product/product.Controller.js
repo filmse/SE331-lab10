@@ -39,7 +39,7 @@
     //$http.get("/product/").success(function (data) {
     vm.queryPromise = productService.query(function (data) {
       // $scope.totalNetPrice= totalCalService.getTotalNetPrice(data);
-     vm.products = data;
+      vm.products = data;
     }).$promise;
 
 
@@ -76,9 +76,9 @@
     var id = $routeParams.id;
     productService.get({id:id},
       // success function
-     function(data){
-       vm.product=data;
-     }
+      function(data){
+        vm.product=data;
+      }
     )
 
 
